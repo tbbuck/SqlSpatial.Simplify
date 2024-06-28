@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net481</TargetFramework>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <LangVersion>12</LangVersion>
+    <Title>Polygon Simplification via Visvalingam for SQL Server CLR</Title>
+    <Authors>Thomas Buck</Authors>
+    <Description>SQLGeography Simplification - SQL Server CLR implementation of Visvalingam.
+
+Supports simplifying native Geography / SqlGeography types via Microsoft.SqlServer.Types, using Visvalingam's algorithm, and choosing to either retain a minimum percentage of points, or limit by the minimum area acceptable to remove.
+
+Should in theory build on Windows, Linux, and MacOs. </Description>
+    <Copyright>Thomas Buck</Copyright>
+    <Version>1.0.1</Version>
+    <PackageTags>simplificaton,polygon,simplify,sqlclr,geospatial,spatial</PackageTags>
+    <PackageId>SqlSpatial.Simplify</PackageId>
+    <Company>Moo Unlimited</Company>
+    <PackageProjectUrl>https://github.com/tbbuck/SqlSpatial.Simplify</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <None Include="README.md" Pack="true" PackagePath="\"/>
+      <None Include="LICENSE" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SqlServer.Server" Version="1.0.0" />
+    <PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <WarningLevel>9999</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <WarningLevel>9999</WarningLevel>
+  </PropertyGroup>
+
+
+</Project>
